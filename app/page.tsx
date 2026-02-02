@@ -15,7 +15,8 @@ export default function Home() {
       // Animate the title with a stagger effect on each letter
       const letters = titleRef.current?.querySelectorAll(".letter");
       
-      gsap.from(letters, {
+      if (letters) {
+        gsap.from(letters, {
         opacity: 0,
         y: 50,
         rotationX: -90,
@@ -23,6 +24,7 @@ export default function Home() {
         duration: 0.8,
         ease: "back.out(1.7)",
       });
+      }
 
       // Continuous floating animation
       gsap.to(titleRef.current, {
