@@ -108,7 +108,7 @@ export default function Home() {
 
         {/* Button */}
         <div ref={buttonRef} className={styles.buttonWrapper}>
-          <Link href="/" className="btn-primary">
+          <Link href="https://www.mehedi-hasan.me" className="btn-primary">
             <AiOutlineArrowRight size={20} />
             <span>Back to Portfolio</span>
           </Link>

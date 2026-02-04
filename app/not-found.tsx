@@ -120,7 +120,7 @@ export default function NotFound() {
           </p>
 
           <div ref={buttonRef} className={styles.buttonWrapper}>
-            <Link href="/" className="btn-primary">
+            <Link href="https://www.mehedi-hasan.me" className="btn-primary">
               <AiOutlineHome size={20} />
               <span>Back to Home</span>
             </Link>
