@@ -1,37 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Blog - Mehedi Hasan
 
-## Getting Started
+A modern, animated blog platform built with Next.js and TypeScript, featuring beautiful UI animations powered by GSAP.
 
-First, run the development server:
+## 🚀 Overview
+
+This is a professional blog application showcasing web development insights, technical articles, and development stories. The blog features smooth animations and a responsive design to provide an engaging user experience.
+
+## ✨ Features
+
+- **Animated Home Page** - Smooth GSAP animations for title, subtitle, description, and call-to-action button
+- **404 Error Page** - Custom animated 404 page with a playful astronaut theme
+- **Responsive Design** - Mobile-friendly layout that works seamlessly across all devices
+- **TypeScript Support** - Fully typed codebase for better development experience
+- **Modern Stack** - Built with Next.js 14+, React, and Tailwind CSS
+- **Icons** - React Icons for consistent iconography
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org) 14+
+- **Language**: TypeScript
+- **Styling**: CSS Modules with Tailwind CSS support
+- **Animations**: GSAP (GreenSock Animation Platform)
+- **Icons**: React Icons
+- **Package Manager**: npm
+
+## 📦 Installation
+
+Clone the repository and install dependencies:
+
+```bash
+npm install
+```
+
+## 🚀 Getting Started
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+├── page.tsx              # Home page with animations
+├── layout.tsx            # Root layout
+├── not-found.tsx         # Custom 404 page
+├── globals.css           # Global styles
+├── home.module.css       # Home page styles
+└── not-found.module.css  # 404 page styles
+public/
+└── images/              # Static assets
+eslint.config.mjs        # ESLint configuration
+tsconfig.json            # TypeScript configuration
+next.config.ts           # Next.js configuration
+```
 
-## Learn More
+## 🎨 Features Details
 
-To learn more about Next.js, take a look at the following resources:
+### Home Page Animation
+- Sequential fade-in and slide-up animations for all elements
+- Smooth scale animation for the call-to-action button
+- Responsive animated background orbs
+- Links to main portfolio at mehedi-hasan.me
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 404 Error Page
+- Playful astronaut imagery
+- Floating animation effect
+- Smooth transitions and hover states
+- Redirect button to main portfolio
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔗 Links
 
-## Deploy on Vercel
+- **Portfolio**: [mehedi-hasan.me](https://www.mehedi-hasan.me)
+- **Blog**: [blog.mehedi-hasan.me](https://blog.mehedi-hasan.me)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 Development
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# still-cooking
+To modify the animations or content:
+
+1. Edit `app/page.tsx` for home page content
+2. Edit `app/not-found.tsx` for 404 page content
+3. Modify CSS modules for styling adjustments
+4. Update GSAP timeline settings for animation changes
+
+## 🚀 Deployment
+
+Deploy to Vercel with one click:
+
+```bash
+npm run build
+npm start
+```
+
+Or deploy directly on [Vercel](https://vercel.com) for automatic deployments from Git.
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 👨‍💻 Author
+
+**Mehedi Hasan**
+- Portfolio: [mehedi-hasan.me](https://www.mehedi-hasan.me)
+- Blog: [blog.mehedi-hasan.me](https://blog.mehedi-hasan.me)
