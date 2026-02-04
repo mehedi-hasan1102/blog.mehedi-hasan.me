@@ -92,18 +92,17 @@ export default function Home() {
       <div className={styles.container}>
         {/* Title */}
         <h1 ref={titleRef} className={styles.title}>
-          Welcome to My <span className={styles.highlight}>Blog</span>
+          Still <span className={styles.highlight}>Cooking </span>
         </h1>
 
         {/* Subtitle */}
-        <p ref={subtitleRef} className={styles.subtitle}>
+        {/* <p ref={subtitleRef} className={styles.subtitle}>
           Insights, Stories & Technical Articles
-        </p>
+        </p> */}
 
         {/* Description */}
         <p ref={descriptionRef} className={styles.description}>
-          Explore my latest thoughts on web development, design, and technology. 
-          Share stories, code snippets, and insights from my journey as a developer.
+          Something amazing is being prepared. Stay tuned!
         </p>
 
         {/* Button */}
