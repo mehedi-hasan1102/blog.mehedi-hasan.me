@@ -3,6 +3,7 @@ import { compileMDX } from 'next-mdx-remote/rsc';
 import remarkGfm from 'remark-gfm';
 import { getAllPosts, getPostBySlug } from '@/lib/blog';
 import { Callout, Img, CodeBlock } from '@/app/blog/components/mdx-components';
+import { BackButton } from './BackButton';
 import styles from './post.module.css';
 
 const formatDate = (dateString: string) =>
@@ -57,20 +58,26 @@ export default async function BlogPost({
 
   return (
     <main className={styles.postPage}>
+     
+      
       <section className={styles.hero}>
+         <div className={`container ${styles.backButtonContainer}`}>
+        <BackButton />
+      </div>
         <div className={`container ${styles.heroInner}`}>
-          <p className={styles.date}>{formatDate(post.meta.date)}</p>
+          <div className={styles.meta}>
+            {post.meta.tags?.length ? (
+              <div className={styles.tags}>
+                {post.meta.tags.map((tag) => (
+                  <span key={tag} className={styles.category}>
+                    {tag.toUpperCase()}
+                  </span>
+                ))}
+              </div>
+            ) : null}
+            <span className={styles.dateText}>{formatDate(post.meta.date)}</span>
+          </div>
           <h1 className={styles.title}>{post.meta.title}</h1>
-          <p className={styles.excerpt}>{post.meta.excerpt}</p>
-          {post.meta.tags?.length ? (
-            <div className={styles.tags}>
-              {post.meta.tags.map((tag) => (
-                <span key={tag} className={styles.tag}>
-                  {tag}
-                </span>
-              ))}
-            </div>
-          ) : null}
         </div>
       </section>
 
