@@ -3,6 +3,7 @@ import "./globals.css";
 // import ThemeToggle from "./components/ThemeToggle";
 import Navbar from "./components/Navbar";
 import Contact from "./components/Contact";
+import SmoothScroll from "./components/SmoothScroll";
 
 export const metadata: Metadata = {
   title: "Mehedi Hasan | Developer, Storyteller & Technical Writer",
@@ -18,10 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        {/* <ThemeToggle /> */}
-        {children}
-        <Contact />
+        <SmoothScroll>
+          <Navbar />
+          {/* <ThemeToggle /> */}
+          {children}
+          <Contact />
+        </SmoothScroll>
       </body>
     </html>
   );
