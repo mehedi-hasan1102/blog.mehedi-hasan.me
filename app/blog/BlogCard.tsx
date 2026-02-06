@@ -88,6 +88,7 @@ export const BlogCard = ({
       </span>
 
       <div className={styles.cardHeader}>
+        <span className={styles.cardNumber}>{String(index + 1).padStart(2, '0')}</span>
         <div className={styles.metaRow}>
           <span className={styles.date}>{formatDate(date)}</span>
           {tags?.length ? (

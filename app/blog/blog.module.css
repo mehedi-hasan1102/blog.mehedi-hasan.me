@@ -148,11 +148,20 @@
   flex-shrink: 0;
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  gap: 1rem;
 }
 
 .card:hover .cardHeader {
   background: linear-gradient(135deg, rgba(34, 211, 238, 0.1), rgba(34, 211, 238, 0.05));
+}
+
+.cardNumber {
+  font-family: 'Staatliches', serif;
+  font-size: 3rem;
+  color: rgba(34, 211, 238, 0.08);
+  line-height: 1;
+  min-width: 80px;
+  flex-shrink: 0;
 }
 
 .metaRow {
