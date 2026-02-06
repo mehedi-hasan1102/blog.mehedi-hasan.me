@@ -1,109 +1,175 @@
-# Blog - Mehedi Hasan
+# Portfolio Website
 
-A modern, animated blog platform built with Next.js and TypeScript, featuring beautiful UI animations powered by GSAP.
+A modern, feature-rich portfolio website built with Next.js 15, TypeScript, and React. This project showcases professional experience, projects, skills, and includes interactive features like a booking modal, blog, and social integrations.
 
-## 🚀 Overview
+## Recent Changes
 
-This is a professional blog application showcasing web development insights, technical articles, and development stories. The blog features smooth animations and a responsive design to provide an engaging user experience.
+- **Blog Redirect** (Feb 3, 2026): Blog route now redirects to external blog at https://blog.mehedi-hasan.me/
 
-## ✨ Features
+## Features
 
-- **Animated Home Page** - Smooth GSAP animations for title, subtitle, description, and call-to-action button
-- **404 Error Page** - Custom animated 404 page with a playful astronaut theme
-- **Responsive Design** - Mobile-friendly layout that works seamlessly across all devices
-- **TypeScript Support** - Fully typed codebase for better development experience
-- **Modern Stack** - Built with Next.js 14+, React, and Tailwind CSS
-- **Icons** - React Icons for consistent iconography
+- **Modern Tech Stack**: Built with Next.js 15 (App Router), TypeScript, and React
+- **Responsive Design**: Fully responsive layout with custom CSS modules
+- **Dark Mode**: Theme toggle functionality for better user experience
+- **Smooth Scrolling**: Enhanced navigation with smooth scroll behavior
+- **Dynamic Pages**:
+  - Home page with Hero section
+  - About page
+  - Blog section
+  - Projects showcase with detailed project pages
+  - Work experience timeline
+  - Skills overview
+  - Feedback system
+  - Code snippets collection
+  - Spotify integration
+  - Social corner
+  - Dashboard
 
-## 🛠️ Tech Stack
-
-- **Framework**: [Next.js](https://nextjs.org) 14+
-- **Language**: TypeScript
-- **Styling**: CSS Modules with Tailwind CSS support
-- **Animations**: GSAP (GreenSock Animation Platform)
-- **Icons**: React Icons
-- **Package Manager**: npm
-
-## 📦 Installation
-
-Clone the repository and install dependencies:
-
-```bash
-npm install
-```
-
-## 🚀 Getting Started
-
-Run the development server:
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
-
-## 📁 Project Structure
+## Project Structure
 
 ```
 app/
-├── page.tsx              # Home page with animations
-├── layout.tsx            # Root layout
-├── not-found.tsx         # Custom 404 page
-├── globals.css           # Global styles
-├── home.module.css       # Home page styles
-└── not-found.module.css  # 404 page styles
+├── components/          # Reusable React components
+│   ├── About.tsx
+│   ├── BookingModal.tsx
+│   ├── Contact.tsx
+│   ├── Experience.tsx
+│   ├── Hero.tsx
+│   ├── Navbar.tsx
+│   ├── Projects.tsx
+│   ├── Skills.tsx
+│   ├── SmoothScroll.tsx
+│   └── ThemeToggle.tsx
+├── projects/[slug]/     # Dynamic project detail pages
+├── about/
+├── blog/
+├── dashboard/
+├── feedback/
+├── snippets/
+├── social-corner/
+├── spotify/
+└── work/
+
 public/
-└── images/              # Static assets
-eslint.config.mjs        # ESLint configuration
-tsconfig.json            # TypeScript configuration
-next.config.ts           # Next.js configuration
+├── assets/             # Images and videos
+│   ├── images/
+│   │   ├── blogs/
+│   │   ├── certificates/
+│   │   └── projects/
+│   └── video/
+└── data/              # JSON data files
+    ├── experience.json
+    ├── projects.json
+    └── skills.json
 ```
 
-## 🎨 Features Details
+## Getting Started
 
-### Home Page Animation
-- Sequential fade-in and slide-up animations for all elements
-- Smooth scale animation for the call-to-action button
-- Responsive animated background orbs
-- Links to main portfolio at mehedi-hasan.me
+### Prerequisites
 
-### 404 Error Page
-- Playful astronaut imagery
-- Floating animation effect
-- Smooth transitions and hover states
-- Redirect button to main portfolio
+- Node.js 18+ 
+- npm, yarn, pnpm, or bun
 
-## 🔗 Links
+### Installation
 
-- **Portfolio**: [mehedi-hasan.me](https://www.mehedi-hasan.me)
-- **Blog**: [blog.mehedi-hasan.me](https://blog.mehedi-hasan.me)
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd www
+```
 
-## 📝 Development
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
 
-To modify the animations or content:
+3. Run the development server:
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-1. Edit `app/page.tsx` for home page content
-2. Edit `app/not-found.tsx` for 404 page content
-3. Modify CSS modules for styling adjustments
-4. Update GSAP timeline settings for animation changes
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-## 🚀 Deployment
-
-Deploy to Vercel with one click:
+### Building for Production
 
 ```bash
 npm run build
 npm start
 ```
 
-Or deploy directly on [Vercel](https://vercel.com) for automatic deployments from Git.
+## Configuration
 
-## 📄 License
+- **ESLint**: Configured with `eslint.config.mjs`
+- **TypeScript**: Type checking with `tsconfig.json`
+- **PostCSS**: Styling configuration in `postcss.config.mjs`
+- **Next.js**: App configuration in `next.config.ts`
 
-This project is open source and available under the MIT License.
+## Customization
 
-## 👨‍💻 Author
+### Update Content
 
-**Mehedi Hasan**
-- Portfolio: [mehedi-hasan.me](https://www.mehedi-hasan.me)
-- Blog: [blog.mehedi-hasan.me](https://blog.mehedi-hasan.me)
+1. **Experience**: Edit `/public/data/experience.json`
+2. **Projects**: Edit `/public/data/projects.json`
+3. **Skills**: Edit `/public/data/skills.json`
+
+### Add Images
+
+Place images in the appropriate directories:
+- Blog images: `/public/assets/images/blogs/`
+- Project images: `/public/assets/images/projects/`
+- Certificates: `/public/assets/images/certificates/`
+
+### Modify Components
+
+All components are located in `/app/components/` with their corresponding CSS modules.
+
+## Deployment
+
+### Deploy on Vercel
+
+The easiest way to deploy this Next.js app is using the [Vercel Platform](https://vercel.com/new):
+
+1. Push your code to GitHub
+2. Import the repository to Vercel
+3. Vercel will automatically detect Next.js and configure the build settings
+4. Deploy!
+
+Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+### Other Platforms
+
+This app can also be deployed to:
+- Netlify
+- AWS Amplify
+- Railway
+- DigitalOcean App Platform
+- Any Node.js hosting service
+
+## Technologies Used
+
+- [Next.js 15](https://nextjs.org/) - React framework
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [React](https://react.dev/) - UI library
+- CSS Modules - Scoped styling
+- [ESLint](https://eslint.org/) - Code linting
+- [PostCSS](https://postcss.org/) - CSS processing
+
+## Learn More
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API
+- [Next.js GitHub repository](https://github.com/vercel/next.js)
+- [Learn Next.js](https://nextjs.org/learn) - interactive tutorial
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).

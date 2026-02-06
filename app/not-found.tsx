@@ -15,78 +15,73 @@ export default function NotFound() {
   const buttonRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Use requestAnimationFrame to ensure DOM is ready
-    const frameId = requestAnimationFrame(() => {
-      const tl = gsap.timeline();
+    const tl = gsap.timeline();
 
-      // Animate 404 image
-      if (imageRef.current) {
-        gsap.set(imageRef.current, { opacity: 0, scale: 0.5, y: -50 });
-        tl.to(imageRef.current, {
+    // Animate 404 image
+    if (imageRef.current) {
+      gsap.set(imageRef.current, { opacity: 0, scale: 0.5, y: -50 });
+      tl.to(imageRef.current, {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'back.out(1.7)',
+      });
+
+      // Floating animation
+      gsap.to(imageRef.current, {
+        y: -20,
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+      });
+    }
+
+    // Animate title
+    if (titleRef.current) {
+      gsap.set(titleRef.current, { opacity: 0, y: 30 });
+      tl.to(
+        titleRef.current,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: 'power3.out',
+        },
+        '-=0.4'
+      );
+    }
+
+    // Animate description
+    if (textRef.current) {
+      gsap.set(textRef.current, { opacity: 0, y: 20 });
+      tl.to(
+        textRef.current,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: 'power3.out',
+        },
+        '-=0.3'
+      );
+    }
+
+    // Animate button
+    if (buttonRef.current) {
+      gsap.set(buttonRef.current, { opacity: 0, scale: 0.9 });
+      tl.to(
+        buttonRef.current,
+        {
           opacity: 1,
           scale: 1,
-          y: 0,
-          duration: 0.8,
-          ease: 'back.out(1.7)',
-        });
-
-        // Floating animation
-        gsap.to(imageRef.current, {
-          y: -20,
-          duration: 2,
-          repeat: -1,
-          yoyo: true,
-          ease: 'sine.inOut',
-        });
-      }
-
-      // Animate title
-      if (titleRef.current) {
-        gsap.set(titleRef.current, { opacity: 0, y: 30 });
-        tl.to(
-          titleRef.current,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            ease: 'power3.out',
-          },
-          '-=0.4'
-        );
-      }
-
-      // Animate description
-      if (textRef.current) {
-        gsap.set(textRef.current, { opacity: 0, y: 20 });
-        tl.to(
-          textRef.current,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            ease: 'power3.out',
-          },
-          '-=0.3'
-        );
-      }
-
-      // Animate button
-      if (buttonRef.current) {
-        gsap.set(buttonRef.current, { opacity: 0, scale: 0.9 });
-        tl.to(
-          buttonRef.current,
-          {
-            opacity: 1,
-            scale: 1,
-            duration: 0.5,
-            ease: 'back.out(2)',
-          },
-          '-=0.2'
-        );
-      }
-    });
-
-    return () => cancelAnimationFrame(frameId);
+          duration: 0.5,
+          ease: 'back.out(2)',
+        },
+        '-=0.2'
+      );
+    }
   }, []);
 
   return (
@@ -120,7 +115,7 @@ export default function NotFound() {
           </p>
 
           <div ref={buttonRef} className={styles.buttonWrapper}>
-            <Link href="https://www.mehedi-hasan.me" className="btn-primary">
+            <Link href="/" className="btn-primary">
               <AiOutlineHome size={20} />
               <span>Back to Home</span>
             </Link>
