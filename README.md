@@ -1,175 +1,241 @@
-# Portfolio Website
+# Mehedi Hasan's Blog
 
-A modern, feature-rich portfolio website built with Next.js 15, TypeScript, and React. This project showcases professional experience, projects, skills, and includes interactive features like a booking modal, blog, and social integrations.
+A modern, high-performance blog built with **Next.js 16**, **TypeScript**, **React 19**, and **MDX** for rich content. This blog features interactive components, dark mode support, and a streamlined content management system.
 
-## Recent Changes
+## 🚀 Features
 
-- **Blog Redirect** (Feb 3, 2026): Blog route now redirects to external blog at https://blog.mehedi-hasan.me/
+- **MDX Support**: Write blog posts with Markdown + React components
+- **Fast and Performant**: Built with Next.js App Router for optimal performance
+- **Responsive Design**: Mobile-first design with CSS modules
+- **Dark Mode**: Theme toggle for comfortable reading
+- **Smooth Scrolling**: Enhanced navigation with Lenis smooth scroll
+- **Interactive Components**: Custom MDX components for embeds, images, callouts
+- **Blog Categories**: Organized blog posts by tags and categories
+- **SEO Optimized**: Proper metadata and structured data
+- **Code Syntax Highlighting**: Beautiful code blocks with GFM support
 
-## Features
+## 📋 Tech Stack
 
-- **Modern Tech Stack**: Built with Next.js 15 (App Router), TypeScript, and React
-- **Responsive Design**: Fully responsive layout with custom CSS modules
-- **Dark Mode**: Theme toggle functionality for better user experience
-- **Smooth Scrolling**: Enhanced navigation with smooth scroll behavior
-- **Dynamic Pages**:
-  - Home page with Hero section
-  - About page
-  - Blog section
-  - Projects showcase with detailed project pages
-  - Work experience timeline
-  - Skills overview
-  - Feedback system
-  - Code snippets collection
-  - Spotify integration
-  - Social corner
-  - Dashboard
+- **Framework**: Next.js 16.1.6
+- **Language**: TypeScript
+- **UI Library**: React 19.2.3
+- **Content**: MDX with Remark GFM
+- **Styling**: CSS Modules + Tailwind CSS
+- **Icons**: React Icons
+- **Animations**: GSAP + Lenis
+- **Email**: EmailJS
 
-## Project Structure
+## 📁 Project Structure
 
 ```
+content/
+└── blog/
+    ├── books-that-shaped-my-reading-journey.mdx
+    ├── building-a-calm-ui.mdx
+    ├── es6-interview-questions-answers.mdx
+    ├── express-js-interview-question.mdx
+    ├── how-to-write-an-effective-cover-letter.mdx
+    ├── html-interview-questions-answers.mdx
+    ├── javascript-interview-questions-answers.mdx
+    ├── mongodb-interview-questions-answers.mdx
+    ├── my-2026-reading-list.mdx
+    ├── my-journey-through-failure-and-meditation.mdx
+    ├── nextjs-interview-questions-answers.mdx
+    ├── nodejs-interview-questions-answers.mdx
+    ├── notes-on-mdx.mdx
+    ├── react-interview-questions-answers.mdx
+    ├── redux-interview-questions-answers.mdx
+    ├── shipping-notes-01.mdx
+    ├── structure-of-a-good-git-commit.mdx
+    ├── the-right-way-to-send-your-resume-via-email.mdx
+    └── building-a-calm-ui.mdx
+
 app/
-├── components/          # Reusable React components
-│   ├── About.tsx
-│   ├── BookingModal.tsx
-│   ├── Contact.tsx
-│   ├── Experience.tsx
-│   ├── Hero.tsx
-│   ├── Navbar.tsx
-│   ├── Projects.tsx
-│   ├── Skills.tsx
-│   ├── SmoothScroll.tsx
-│   └── ThemeToggle.tsx
-├── projects/[slug]/     # Dynamic project detail pages
-├── about/
 ├── blog/
-├── dashboard/
-├── feedback/
-├── snippets/
-├── social-corner/
-├── spotify/
-└── work/
+│   ├── page.tsx              # Blog listing page
+│   ├── blog.module.css       # Blog styles
+│   ├── BlogCard.tsx          # Blog card component
+│   ├── [slug]/
+│   │   ├── page.tsx          # Individual blog post page
+│   │   ├── post.module.css   # Post styles
+│   │   └── BackButton.tsx    # Navigation component
+│   └── components/
+│       ├── mdx-components.tsx    # Custom MDX components
+│       └── mdx-components.module.css
+
+lib/
+├── blog.ts                   # Blog data fetching utilities
+└── useTheme.ts              # Theme management hook
 
 public/
-├── assets/             # Images and videos
-│   ├── images/
-│   │   ├── blogs/
-│   │   ├── certificates/
-│   │   └── projects/
-│   └── video/
-└── data/              # JSON data files
-    ├── experience.json
-    ├── projects.json
-    └── skills.json
+└── assets/
+    ├── images/
+    │   └── blogs/            # Blog post images
+    └── data/
+        ├── projects.json
+        ├── skills.json
+        └── experience.json
 ```
 
-## Getting Started
+## 📝 Creating a New Blog Post
 
-### Prerequisites
+### Step 1: Create MDX File
 
-- Node.js 18+ 
-- npm, yarn, pnpm, or bun
+Create a new `.mdx` file in `content/blog/` with proper frontmatter:
 
-### Installation
+```mdx
+---
+title: "Your Post Title"
+date: "2026-02-07"
+excerpt: "A brief description of your post for listings."
+tags: ["tag1", "tag2"]
+---
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd www
+## Your First Heading
+
+Your content here...
+
+<Img 
+  src="/assets/images/blogs/your-image.jpg" 
+  alt="Alt text" 
+  caption="Image caption"
+/>
+
+More content...
 ```
 
-2. Install dependencies:
-```bash
-npm install
-# or
-yarn install
-# or
-pnpm install
+### Step 2: Frontmatter Requirements
+
+- **title** (required): Post title in quotes
+- **date** (required): Date in `YYYY-MM-DD` format
+- **excerpt** (required): Short description for blog listings
+- **tags** (required): Array of tags for categorization
+- **image** (optional): Featured image path
+
+### Step 3: File Naming
+
+- Use lowercase with hyphens: `my-blog-post-title.mdx`
+- This becomes the post slug automatically
+
+## 🎨 Custom MDX Components
+
+### Image Component
+
+```mdx
+<Img 
+  src="/assets/images/blogs/example.jpg" 
+  alt="Description" 
+  caption="Optional caption"
+/>
 ```
 
-3. Run the development server:
+### Callout Component
+
+```mdx
+<Callout type="info">
+  This is an info callout
+</Callout>
+```
+
+Types: `info`, `warning`, `success`, `error`
+
+## 🏗️ Building & Running
+
+### Development
+
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+Visit `http://localhost:3000/blog` to see the blog.
 
-### Building for Production
+### Production Build
 
 ```bash
 npm run build
-npm start
+npm run start
 ```
 
-## Configuration
+### Linting
 
-- **ESLint**: Configured with `eslint.config.mjs`
-- **TypeScript**: Type checking with `tsconfig.json`
-- **PostCSS**: Styling configuration in `postcss.config.mjs`
-- **Next.js**: App configuration in `next.config.ts`
+```bash
+npm run lint
+```
 
-## Customization
+## 📚 Blog Data Fetching
 
-### Update Content
+The `lib/blog.ts` file handles:
 
-1. **Experience**: Edit `/public/data/experience.json`
-2. **Projects**: Edit `/public/data/projects.json`
-3. **Skills**: Edit `/public/data/skills.json`
+- Reading all `.mdx` files from `content/blog/`
+- Parsing frontmatter using `gray-matter`
+- Generating blog post metadata
+- Creating slug-based URLs
 
-### Add Images
+```typescript
+// Get all blog posts
+const posts = getAllPosts();
 
-Place images in the appropriate directories:
-- Blog images: `/public/assets/images/blogs/`
-- Project images: `/public/assets/images/projects/`
-- Certificates: `/public/assets/images/certificates/`
+// Posts are sorted and available for listing
+```
 
-### Modify Components
+## 🎯 Best Practices for Blog Posts
 
-All components are located in `/app/components/` with their corresponding CSS modules.
+1. **Keep excerpts concise**: 100-160 characters for better readability in listings
+2. **Use descriptive titles**: Clear, SEO-friendly titles
+3. **Add relevant tags**: Help readers discover related content
+4. **Include featured images**: Enhance blog card visuals
+5. **Write clean markdown**: Proper heading hierarchy, emphasis, and lists
+6. **Link internally**: Reference other blog posts using relative links
 
-## Deployment
+## 🔍 SEO Optimization
 
-### Deploy on Vercel
+Each blog post automatically includes:
 
-The easiest way to deploy this Next.js app is using the [Vercel Platform](https://vercel.com/new):
+- Meta tags from frontmatter
+- Semantic HTML structure
+- Open Graph data for social sharing
+- XML sitemap support (via Next.js)
 
-1. Push your code to GitHub
-2. Import the repository to Vercel
-3. Vercel will automatically detect Next.js and configure the build settings
-4. Deploy!
+## 🌐 Deployment
 
-Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This blog is optimized for deployment on:
 
-### Other Platforms
+- **Vercel** (recommended): One-click deployment from GitHub
+- **Netlify**: Compatible with Next.js builds
+- **Self-hosted**: Standard Node.js server requirements
 
-This app can also be deployed to:
-- Netlify
-- AWS Amplify
-- Railway
-- DigitalOcean App Platform
-- Any Node.js hosting service
+### Environment Variables
 
-## Technologies Used
+No special environment variables required for basic blog functionality.
 
-- [Next.js 15](https://nextjs.org/) - React framework
-- [TypeScript](https://www.typescriptlang.org/) - Type safety
-- [React](https://react.dev/) - UI library
-- CSS Modules - Scoped styling
-- [ESLint](https://eslint.org/) - Code linting
-- [PostCSS](https://postcss.org/) - CSS processing
+## 📖 Content Guidelines
 
-## Learn More
+- Use Markdown formatting for consistency
+- Include at least one image per post
+- Aim for 500-2000 words per post
+- Break up large content with subheadings
+- Add code examples where relevant
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API
-- [Next.js GitHub repository](https://github.com/vercel/next.js)
-- [Learn Next.js](https://nextjs.org/learn) - interactive tutorial
+## 🤝 Contributing
 
-## License
+To add new posts:
 
-This project is open source and available under the [MIT License](LICENSE).
+1. Create a new `.mdx` file in `content/blog/`
+2. Follow the frontmatter format
+3. Write your content
+4. Add featured image to `public/assets/images/blogs/`
+5. Test locally with `npm run dev`
+
+## 📄 License
+
+This project is part of Mehedi Hasan's portfolio. Content is copyrighted.
+
+## 🔗 Links
+
+- **Blog**: https://blog.mehedi-hasan.me
+- **Portfolio**: https://mehedi-hasan.me
+- **GitHub**: [Your GitHub URL]
+
+---
+
+**Last Updated**: February 7, 2026
