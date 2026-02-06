@@ -16,7 +16,7 @@ export default function Home() {
       <section className={styles.hero}>
         <div className={styles.heroInner}>
           <h1 className={styles.title}>
-            Notes from the <span className={styles.accentText}>build desk</span>
+            Interface <span className={styles.accentText}> Journal</span>
           </h1>
         </div>
       </section>
