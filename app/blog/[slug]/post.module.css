@@ -171,14 +171,31 @@
   border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.prose code {
+.prose :not(pre) > code {
+  font-family: 'SFMono-Regular', ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, 'Liberation Mono', 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: #e5e7eb;
+  background: rgba(34, 211, 238, 0.14);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  padding: 0.15rem 0.4rem;
+  border-radius: 6px;
+}
+
+:global(html.light-mode) .prose :not(pre) > code {
+  color: #000000;
+  background: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+}
+
+.prose pre code {
   font-family: 'SFMono-Regular', ui-monospace, SFMono-Regular, Menlo, Monaco,
     Consolas, 'Liberation Mono', 'Courier New', monospace;
   font-size: 0.9rem;
   color: #e5e7eb;
 }
 
-:global(html.light-mode .prose code) {
+:global(html.light-mode .prose pre code) {
   color: #1f2937;
 }
 

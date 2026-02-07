@@ -1,4 +1,7 @@
 import styles from './mdx-components.module.css';
+import React from 'react';
+import { CodeBlock } from './CodeBlock';
+export { CodeBlock } from './CodeBlock';
 
 type CalloutType = 'info' | 'warning' | 'success' | 'error';
 
@@ -35,28 +38,34 @@ export const Img = ({
   </figure>
 );
 
-export const CodeBlock = ({
-  children,
-  title,
-  language,
-  code,
-}: {
-  children?: React.ReactNode;
-  title?: string;
-  language?: string;
-  code?: string;
-}) => {
-  const codeContent = code || children;
-  return (
-    <div className={styles.codeBlockWrapper}>
-      {title && <div className={styles.codeBlockTitle}>{title}</div>}
-      <pre className={`${styles.codeBlock} language-${language || 'text'}`}>
-        <code>{codeContent}</code>
-      </pre>
-    </div>
-  );
-};
-
 export const Prose = ({ children }: { children: React.ReactNode }) => (
   <div className={styles.prose}>{children}</div>
 );
+
+const getTextFromNode = (node: React.ReactNode) => {
+  if (typeof node === 'string' || typeof node === 'number') {
+    return String(node);
+  }
+
+  if (Array.isArray(node)) {
+    return node.map(getTextFromNode).join('');
+  }
+
+  return '';
+};
+
+export const Pre = (props: React.HTMLAttributes<HTMLPreElement>) => {
+  const childArray = React.Children.toArray(props.children);
+  const codeElement = childArray[0];
+
+  if (React.isValidElement(codeElement)) {
+    const className = typeof codeElement.props?.className === 'string' ? codeElement.props.className : '';
+    const languageMatch = className.match(/language-(?<lang>[^\s]+)/);
+    const language = languageMatch?.groups?.lang;
+    const code = getTextFromNode(codeElement.props?.children);
+
+    return <CodeBlock language={language} code={code} />;
+  }
+
+  return <CodeBlock code={getTextFromNode(props.children)} />;
+};

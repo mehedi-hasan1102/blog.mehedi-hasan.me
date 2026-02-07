@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import remarkGfm from 'remark-gfm';
 import { getAllPosts, getPostBySlug } from '@/lib/blog';
-import { Callout, Img, CodeBlock } from '@/app/blog/components/mdx-components';
+import { Callout, Img, CodeBlock, Pre } from '@/app/blog/components/mdx-components';
 import { BackButton } from './BackButton';
 import styles from './post.module.css';
 
@@ -48,6 +48,7 @@ export default async function BlogPost({
       Callout,
       Img,
       CodeBlock,
+      pre: Pre,
     },
     options: {
       mdxOptions: {
