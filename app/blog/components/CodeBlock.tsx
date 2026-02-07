@@ -80,7 +80,7 @@ export const CodeBlock = ({ children, title, language, code }: CodeBlockProps) =
           {copied ? 'Copied' : 'Copy'}
         </button>
       </div>
-      <pre className={`${styles.codeBlock} language-${language || 'text'}`}>
+      <pre className={`mdx-code-block ${styles.codeBlock} language-${language || 'text'}`}>
         <code>{code || children}</code>
       </pre>
     </div>
