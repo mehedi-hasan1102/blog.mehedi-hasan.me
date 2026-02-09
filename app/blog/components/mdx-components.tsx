@@ -58,8 +58,8 @@ export const Pre = (props: React.HTMLAttributes<HTMLPreElement>) => {
   const childArray = React.Children.toArray(props.children);
   const codeElement = childArray[0];
 
-  if (React.isValidElement(codeElement)) {
-    const className = typeof codeElement.props?.className === 'string' ? codeElement.props.className : '';
+  if (React.isValidElement<React.HTMLAttributes<HTMLElement>>(codeElement)) {
+    const className = typeof codeElement.props.className === 'string' ? codeElement.props.className : '';
     const languageMatch = className.match(/language-(?<lang>[^\s]+)/);
     const language = languageMatch?.groups?.lang;
     const code = getTextFromNode(codeElement.props?.children);
