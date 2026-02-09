@@ -252,7 +252,7 @@ export default function Navbar() {
             }}
           >
             <Image 
-              src="/profile/profile%20-%20blue.png" 
+              src="/profile/profile.png" 
               alt="Mehedi Hasan's profile logo"
               width={28}
               height={28}
