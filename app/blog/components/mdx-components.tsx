@@ -42,7 +42,7 @@ export const Prose = ({ children }: { children: React.ReactNode }) => (
   <div className={styles.prose}>{children}</div>
 );
 
-const getTextFromNode = (node: React.ReactNode) => {
+const getTextFromNode = (node: React.ReactNode): string => {
   if (typeof node === 'string' || typeof node === 'number') {
     return String(node);
   }

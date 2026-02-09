@@ -40,6 +40,7 @@ export function useTheme() {
     updateThemeDOM(shouldBeDark);
 
     // Then update state
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsDark(shouldBeDark);
   }, []);
 
