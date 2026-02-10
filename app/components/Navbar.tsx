@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import gsap from 'gsap';
-import { FiMenu, FiX, FiMessageCircle } from 'react-icons/fi';
+import { FiChevronDown, FiMenu, FiX, FiMessageCircle } from 'react-icons/fi';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import BookingModal from './BookingModal';
 import { useTheme } from '../../lib/useTheme';
@@ -334,12 +334,13 @@ export default function Navbar() {
     <span
       aria-hidden
       style={{
-        display: 'inline-block',
+        display: 'inline-flex',
+        alignItems: 'center',
         transition: 'transform 0.3s ease',
         transform: isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)',
       }}
     >
-      ▼
+      <FiChevronDown size={16} />
     </span>
   </button>
 
@@ -605,8 +606,19 @@ export default function Navbar() {
               <span className="text-3xl font-black opacity-40 group-hover:opacity-100 transition-opacity">
                 05
               </span>
-              <span className="text-3xl font-bold group-hover:scale-105 transition-transform origin-left">
+              <span className="text-3xl font-bold group-hover:scale-105 transition-transform origin-left flex items-center gap-3">
                 More
+                <span
+                  aria-hidden
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    transition: 'transform 0.3s ease',
+                    transform: isMobileMoreOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                  }}
+                >
+                  <FiChevronDown size={18} />
+                </span>
               </span>
             </button>
 
