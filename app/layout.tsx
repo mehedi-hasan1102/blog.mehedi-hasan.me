@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Contact from "./components/Contact";
 import SmoothScroll from "./components/SmoothScroll";
+import InfiniteMarquee from "./components/InfiniteMarquee";
 
 export const metadata: Metadata = {
   title: "Mehedi Hasan | Developer, Storyteller & Technical Writer",
@@ -24,6 +25,7 @@ export default function RootLayout({
           {/* <ThemeToggle /> */}
           {children}
           <Contact />
+          <InfiniteMarquee />
         </SmoothScroll>
       </body>
     </html>
