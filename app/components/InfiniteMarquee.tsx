@@ -19,7 +19,7 @@ export default function InfiniteMarquee() {
 
     const tween = gsap.to(track, {
       xPercent: -50,
-      duration: 40,
+      duration: 56,
       ease: 'none',
       repeat: -1,
     });
