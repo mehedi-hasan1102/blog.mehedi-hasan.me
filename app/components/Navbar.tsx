@@ -22,7 +22,7 @@ const NAV_LINKS = [
 // Dropdown menu items
 const MORE_ITEMS = [
   { label: 'Dashboard', href: 'https://www.mehedi-hasan.me/dashboard' },
-   { label: 'Social Corner', href: 'https://www.mehedi-hasan.me/social-corner' },
+   { label: 'Links', href: 'https://www.mehedi-hasan.me/links' },
   // { label: 'Feedback', href: '/feedback' },
   // { label: 'Snippets', href: '/snippets' },
  
