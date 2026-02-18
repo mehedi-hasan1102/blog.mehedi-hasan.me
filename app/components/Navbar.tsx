@@ -1,31 +1,4 @@
-
-
-// // Navigation links
-// const NAV_LINKS = [
-//   { label: 'Home', href: 'https://www.mehedi-hasan.me' },
-//   // { label: 'About', href: '/about' },
-//   { label: 'Portfolyio', href: 'https://www.mehedi-hasan.me/portfolyio' },
-//   { label: 'Blog', href: '/blog' },
-// ];
-
-// // Dropdown menu items
-// const MORE_ITEMS = [
-//   { label: 'Dashboard', href: 'https://www.mehedi-hasan.me/dashboard' },
-//    { label: 'Links', href: 'https://www.mehedi-hasan.me/links' },
-//   // { label: 'Feedback', href: '/feedback' },
-//   // { label: 'Snippets', href: '/snippets' },
- 
-//           <Link
-//             href="https://www.mehedi-hasan.me"
-//             className={styles.logo}
-//             onMouseEnter={(e) => {
-//               e.currentTarget.style.background = 'rgba(34, 211, 238, 0.15)';
-//             }}
-//             onMouseLeave={(e) => {
-//               e.currentTarget.style.background = 'rgba(34, 211, 238, 0.1)';
-//             }}
-//           >
-           
+   
 
 
 'use client';
@@ -42,7 +15,7 @@ import { useTheme } from '../../lib/useTheme';
 
 // Navigation links
 const NAV_LINKS = [
-  { label: 'Home', href: '/https://www.mehedi-hasan.me' },
+  { label: 'Home', href: 'https://www.mehedi-hasan.me' },
   { label: 'About', href: 'https://www.mehedi-hasan.me/about' },
   
   { label: 'Portfolyio', href: 'https://www.mehedi-hasan.me/portfolyio' },
@@ -154,18 +127,6 @@ export default function Navbar() {
     gsap.to(e.currentTarget, { y: 0, duration: 0.3, ease: 'power2.out' });
   };
 
-  // ============================================
-  // LOGO SCROLL TO TOP
-  // ============================================
-  const scrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    // Only scroll to top if already on home page
-    if (pathname === '/') {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-    // Otherwise allow normal navigation
-  };
-
   const openDropdown = () => {
     clearDropdownCloseTimeout();
     setIsDropdownOpen(true);
@@ -234,7 +195,6 @@ export default function Navbar() {
             {/* Logo - Left Side with Pill Background */}
             <Link
               href="https://www.mehedi-hasan.me"
-              onClick={scrollToTop}
               className="flex shrink-0 cursor-pointer items-center gap-2 rounded-full bg-[rgba(34,211,238,0.1)] px-2.5 py-1.5 text-base font-bold tracking-[0.05em] text-[var(--accent)] transition-all duration-300 hover:bg-[rgba(34,211,238,0.2)] hover:shadow-[0_0_20px_rgba(34,211,238,0.2),inset_0_0_10px_rgba(34,211,238,0.1)] active:opacity-85 sm:px-4 sm:py-2 sm:text-lg"
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'rgba(34, 211, 238, 0.15)';
